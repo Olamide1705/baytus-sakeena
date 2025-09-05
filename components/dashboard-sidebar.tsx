@@ -109,7 +109,7 @@ export function DashboardSidebar() {
   return (
     <>
       {/* Mobile Trigger */}
-      <div className="fixed top-4 left-5 z-50 md:hidden">
+      <div className="fixed top-5.5 left-5 z-50 md:hidden">
         <Button
           size="icon"
           onClick={() => setOpen(true)}
@@ -122,7 +122,7 @@ export function DashboardSidebar() {
       {/* Mobile Sidebar (Sheet) */}
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="left" className="w-64 p-0">
-          <SheetHeader className="p-4 border-b">
+          <SheetHeader className="p-4 border-b mt-5">
             <SheetTitle>
               {/* Mobile Logo */}
               <Link

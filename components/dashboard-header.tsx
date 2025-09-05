@@ -20,49 +20,33 @@ export function DashboardHeader() {
   const [notifications] = useState("6");
 
   return (
-    <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-      <div className="flex items-center px-6 py-4 w-full">
+    <header className="border-b border-border md:bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+      <div className="flex items-center px-6 py-4 w-full mt-1 md:mt-0">
         {/* Desktop Logo */}
-        <Link
-          href="/dashboard"
-          className="hidden md:block flex items-center space-x-2"
-        >
-          <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-            <Heart className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <span className="text-base lg:text-xl font-bold text-foreground">
-            Baytus-Sakeenah
-          </span>
-        </Link>
-
-        {/* Mobile */}
-        <div className="md:hidden absolute left-1/2 transform -translate-x-1/2">
-          <Link href="/dashboard" className="flex items-center space-x-2">
+        <div className="flex-shrink-0">
+          <Link
+            href="/dashboard"
+            className="hidden md:flex items-center space-x-2"
+          >
+            <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+              <Heart className="w-5 h-5 text-primary-foreground" />
+            </div>
             <span className="text-base lg:text-xl font-bold text-foreground">
               Baytus-Sakeenah
             </span>
           </Link>
         </div>
-
-        {/* Search Bar Desktop only*/}
-        <div className="hidden md:flex flex-1 justify-center px-8">
-          <div className="max-w-md w-full">
-            <GlobalSearch placeholder="Search articles, questions, stories..." />
-          </div>
+        {/* Search Bar */}
+        <div className="flex items-center justify-center space-x-4 flex-1 max-w-md ml-10 mr-3 md:ml-0 md:mr-0">
+          <GlobalSearch placeholder="Search articles, questions, stories..." />
         </div>
 
         {/* User Actions */}
-        <div className="ml-auto flex items-center gap-1 lg:gap-4">
+        <div className="flex flex-shrink-0 items-center gap-1 lg:gap-4">
           {/* Notifications */}
           <div className="relative">
-            <Image
-              src="/notification.png"
-              alt="Notification Bell"
-              width={24}
-              height={24}
-              className="cursor-pointer"
-            />
-            <span className="absolute -top-1 -right-1 bg-primary rounded-full text-white text-xs px-1">
+            <Bell className="cursor-pointer w-5 h-5 lg:w-6 lg:h-6" />
+            <span className="absolute -top-1 -right-1 bg-primary rounded-full text-white text-[8px] lg:text-xs px-1">
               {notifications}
             </span>
           </div>
